@@ -1,0 +1,14 @@
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\bin\Debug\net9.0\GestorEstudiantes.exe
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\bin\Debug\net9.0\GestorEstudiantes.deps.json
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\bin\Debug\net9.0\GestorEstudiantes.runtimeconfig.json
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\bin\Debug\net9.0\GestorEstudiantes.dll
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\bin\Debug\net9.0\GestorEstudiantes.pdb
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\obj\Debug\net9.0\GestorEstudiantes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\obj\Debug\net9.0\GestorEstudiantes.AssemblyInfoInputs.cache
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\obj\Debug\net9.0\GestorEstudiantes.AssemblyInfo.cs
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\obj\Debug\net9.0\GestorEstudiantes.csproj.CoreCompileInputs.cache
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\obj\Debug\net9.0\GestorEstudiantes.dll
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\obj\Debug\net9.0\refint\GestorEstudiantes.dll
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\obj\Debug\net9.0\GestorEstudiantes.pdb
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\obj\Debug\net9.0\GestorEstudiantes.genruntimeconfig.cache
+C:\Users\jc300\Desktop\c#_class\GestorEstudiantes\obj\Debug\net9.0\ref\GestorEstudiantes.dll
