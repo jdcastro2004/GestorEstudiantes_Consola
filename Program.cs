@@ -38,15 +38,15 @@ class Program
                 {
                     case 1:
                         // Console.WriteLine("Funcion registrar estudiantes");
-                        RegistrarEstudiante();
+                        Registrar();
                         break;
                     case 2:
                         // Console.WriteLine("Funcion para listar estudiantes");
-                        ListarEstudiante();
+                        Listar();
                         break;
                     case 3:
                         // Console.WriteLine("Funcion para buscar estudiantes");
-                        BucarEstudiante();
+                        Bucar();
                         break;
                     case 4:
                         salir = true;
@@ -63,7 +63,7 @@ class Program
             }
 
             //Funcion registrar
-            static void RegistrarEstudiante()
+            static void Registrar()
             {
                 Console.WriteLine("Nombre:");
                 string nombre = Console.ReadLine()!;
@@ -79,7 +79,7 @@ class Program
             }
 
             //Funcion Listar
-            static void ListarEstudiante()
+            static void Listar()
             {
                 Console.WriteLine("LISTA DE ESTUDIANTES:");
                 //Recorre lista de estudiantes
@@ -90,7 +90,7 @@ class Program
             }
 
             // Funcion para buscar estudiantes por medio de nombres
-            static void BucarEstudiante()
+            static void Bucar()
             {
                 Console.WriteLine("Busar estudiante:  ");
                 string nombre = Console.ReadLine()!;
@@ -152,24 +152,6 @@ public class Estudiante : Persona
     }
 
 }
-
-public class Profesor : Persona
-{
-    string Materia { get; set; }
-    Profesor(string nombre, string apellido, int edad, string materia)
-    {
-        Nombre = nombre;
-        Apellido = apellido;
-        Edad = edad;
-        Materia = materia;
-    }
-    public override void MostrarInfo()
-    {
-        System.Console.WriteLine($"Nombre: {Nombre}, Apellido: {Apellido}, Edad: {Edad}, Materia: {Materia}");
-    }
-
-}
-
 
 
 
