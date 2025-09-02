@@ -9,7 +9,7 @@ class Program
 {
 
     //Lista de estudiantes
-        static List<Estudiante> estudiantes=new();
+        static List<Estudiante> estudiantes = new();
     static void Main()
     {
 
@@ -23,49 +23,122 @@ class Program
             System.Console.WriteLine("1. Registrar estudiantes");
             System.Console.WriteLine("2. Listar estudiantes");
             System.Console.WriteLine("3. Buscar estudiantes");
-            System.Console.WriteLine("4. Salir");
+            System.Console.WriteLine("4. Registrar profesor");
+            System.Console.WriteLine("5. Listar profesor");
+            System.Console.WriteLine("6. Buscar profesor");
+            System.Console.WriteLine("7. Salir");
             System.Console.WriteLine("Elige una opcion");
 
-            //Elegir opcion
-            int opcion = int.Parse(Console.ReadLine()!);
-            
-            switch (opcion)
+            try
             {
-                case 1:
-                    Console.WriteLine("Funcion registrar estudiantes");
-                    break;
-                case 2:
-                    Console.WriteLine("Funcion para listar estudiantes");
-                    break;
-                case 3:
-                    Console.WriteLine("Funcion para buscar estudiantes");
-                    break;
-                case 4:
-                    salir = true;
-                    break;
-                //Opcion invalida
-                default:
-                    Console.WriteLine("Opcion invalida");
-                    break;
+                //Elegir opcion
+                int opcion = int.Parse(Console.ReadLine()!);
+
+                switch (opcion)
+                {
+                    case 1:
+                        // Console.WriteLine("Funcion registrar estudiantes");
+                        RegistrarEstudiante();
+                        break;
+                    case 2:
+                        // Console.WriteLine("Funcion para listar estudiantes");
+                        ListarEstudiante();
+                        break;
+                    case 3:
+                        // Console.WriteLine("Funcion para buscar estudiantes");
+                        BucarEstudiante();
+                        break;
+                    case 4:
+                        salir = true;
+                        break;
+                    //Opcion invalida
+                    default:
+                        Console.WriteLine("Opcion invalida");
+                        break;
+                }
+            }
+            catch(FormatException)
+            {
+                System.Console.WriteLine("Error al ingresar el numero");
             }
 
+            //Funcion registrar
+            static void RegistrarEstudiante()
+            {
+                Console.WriteLine("Nombre:");
+                string nombre = Console.ReadLine()!;
+                Console.WriteLine("Apellido:");
+                string apellido = Console.ReadLine()!;
+                Console.WriteLine("Edad:");
+                int edad = int.Parse(Console.ReadLine()!);
+                Console.WriteLine("Carrera:");
+                string carrera = Console.ReadLine()!;
 
+                estudiantes.Add(new Estudiante(nombre, apellido, edad, carrera));
+                Console.WriteLine("Estudiante registrado de forma correcta");
+            }
+
+            //Funcion Listar
+            static void ListarEstudiante()
+            {
+                Console.WriteLine("LISTA DE ESTUDIANTES:");
+                //Recorre lista de estudiantes
+                foreach (var i in estudiantes)
+                {
+                    i.MostrarInfo();
+                }
+            }
+
+            // Funcion para buscar estudiantes por medio de nombres
+            static void BucarEstudiante()
+            {
+                Console.WriteLine("Busar estudiante:  ");
+                string nombre = Console.ReadLine()!;
+
+
+                foreach (var e in estudiantes)
+                {
+                    //Si el Nombre es igual al nombre ignorando si las letras son mayusculas o minusculas
+                    if (e.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase))
+                    {
+                        Console.WriteLine("Estudiante encontrado: ");
+                        e.MostrarInfo();
+                        return;
+                    } 
+                    //Si no se encontro
+                    else
+                    {
+                        Console.WriteLine("Estudiante no encontrado");
+                    }
+
+                }
+            }
 
         }
 
     }
 }
 
-public class Estudiante
+//Clase persona
+public abstract class Persona
 {
-    //Propiedades
     public string Nombre { get; set; }
     public string Apellido { get; set; }
-    public string Edad { get; set; }
+    public int Edad { get; set; }
+
+    public abstract void MostrarInfo();
+}
+
+
+public class Estudiante : Persona
+{
+    //Propiedades
+    // public string Nombre { get; set; }
+    // public string Apellido { get; set; }
+    // public int Edad { get; set; }
     public string Carrera { get; set; }
 
-    //Constructor
-    public Estudiante(string nombre, string apellido, string edad, string carrera)
+    public Estudiante(string nombre, string apellido, int edad, string carrera)
     {
         Nombre = nombre;
         Apellido = apellido;
@@ -73,12 +146,31 @@ public class Estudiante
         Carrera = carrera;
     }
 
-    //Metodo
-    public void MostrarInfo()
+    public override void MostrarInfo()
     {
-        System.Console.WriteLine($"Nombre: {Nombre}, Apellido: {Apellido}, Edad: {Edad}, Carrera: {Carrera}");
+        Console.WriteLine($"Estudiante: {Nombre},Apellido: {Apellido}, Edad: {Edad}, Carrera: {Carrera}");
     }
 
 }
+
+public class Profesor : Persona
+{
+    string Materia { get; set; }
+    Profesor(string nombre, string apellido, int edad, string materia)
+    {
+        Nombre = nombre;
+        Apellido = apellido;
+        Edad = edad;
+        Materia = materia;
+    }
+    public override void MostrarInfo()
+    {
+        System.Console.WriteLine($"Nombre: {Nombre}, Apellido: {Apellido}, Edad: {Edad}, Materia: {Materia}");
+    }
+
+}
+
+
+
 
 
